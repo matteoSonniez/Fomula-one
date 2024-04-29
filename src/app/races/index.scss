@@ -1,0 +1,20 @@
+.div-height {
+    z-index: var(--one-div-zindex);
+    top: var(--one-div-top);
+    height: var(--one-div-height); /* hauteur normale */
+    transition: height 0.5s, top 0.5s ease ; /* Transition pour un effet lisse */
+    img {
+        opacity: 0.3;   
+        transition: opacity 0.5s ease;
+    }
+    &:hover { // Lorsque .div-height est survolé
+        img {
+            opacity: 0.8; // Nouvelle opacité des images
+        }
+    }
+}
+
+.div-height:not(.active):hover {
+    height: calc(var(--one-div-height) * 1.5); /* hauteur double au survol */
+}
+

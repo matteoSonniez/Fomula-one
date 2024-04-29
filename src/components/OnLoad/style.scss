@@ -1,0 +1,47 @@
+   
+   .container {
+    color: aliceblue;
+    height: 100vh;
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+   }
+   
+   .header {
+    margin: 0.25rem 0;
+    font-size: 2.5rem;
+   }
+   
+   p {
+    margin: 0.5rem 0;
+    font-size: 22px;
+   }
+   
+   
+   /* animation class and keyframes */
+   .overflow-hidden {
+    overflow: hidden;
+   }
+   
+   .drop-in {
+    animation: drop-in 3s ease 300ms backwards;
+   }
+   
+   .drop-in-2 {
+    animation: drop-in 1200ms ease 500ms backwards;
+   }
+   
+   @keyframes drop-in {
+    from {
+     opacity: 0;
+     transform: translateY(-100px);
+    }
+    to {
+     opacity: 1;
+     transform: translate(0px);
+    }
+   }
+   
