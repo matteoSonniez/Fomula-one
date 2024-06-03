@@ -1,0 +1,56 @@
+.moving-div {
+  left: var(--one-div-left);
+  top: var(--one-div-top);
+  background-color: white;
+  position: absolute;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 -10px 20px rgba(0, 0, 0, 0.5), 10px 0 20px rgba(0, 0, 0, 0.5), -10px 0 20px rgba(0, 0, 0, 0.5); 
+  transition: all 0.4s ease;
+}
+
+/* Classe pour augmenter le z-index lorsque isClick est true */
+.high-z-index {
+  z-index: 50; /* Maintenir un z-index élevé tant que isClick est true */
+}
+
+/* Keyframes pour l'animation de déplacement vers la droite */
+@keyframes click-move-forward {
+  0% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(-180px);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+/* Keyframes pour l'animation de déplacement vers la gauche */
+@keyframes click-move-backward {
+  0% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(-180px);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+/* Style lorsque isClick est true */
+.clicked {
+  animation: click-move-forward 1.8s forwards;
+}
+
+/* Style lorsque isClick repasse à false */
+.not-clicked {
+  animation: click-move-backward 1.8s forwards;
+}
+
+/* Classe pour réinitialiser la transformation */
+.reset-transform {
+  transform: translateX(-10px);
+}

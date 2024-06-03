@@ -50,8 +50,16 @@ const Index = ({loadIt, loadIt2}) => {
           ></div>
         </div>
         <div className=" relative group">
-          <Link href={"/"} onClick={()=>{loadIt2()}} className={syne2.className}>
-            COLLECTION
+          <Link href={"/track"} onClick={()=>{loadIt2()}} className={syne2.className}>
+            TRACKS
+          </Link>
+          <div
+            className={`bg-white w-0 h-[1px] group-hover:w-full transition-all duration-300 ease-out`}
+          ></div>
+        </div>
+        <div className=" relative group">
+          <Link href={"/results"} onClick={()=>{loadIt2()}} className={syne2.className}>
+            RESULTS
           </Link>
           <div
             className={`bg-white w-0 h-[1px] group-hover:w-full transition-all duration-300 ease-out`}

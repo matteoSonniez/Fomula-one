@@ -1,21 +1,14 @@
 "use client";
 import React from "react";
-import Versta from "@/img/versta.png";
-import Leclerc from "@/img/leclerc.png";
-import Carlos from "@/img/carlos.png";
-import Hami from "@/img/hami.png";
-import Alonzo from "@/img/alonzo.png";
-import Norris from "@/img/norris.png";
 import { Syne } from "next/font/google";
 import { Gothic_A1 } from "next/font/google";
 import { Kanit } from "next/font/google";
-import BackGround from "@/img/driver-bg.jpg";
+import BackGround from "@/img/track.webp";
 import BG1 from "@/img/bg-1.jpg";
-import BG2 from "@/img/bg-2.webp";
+//import Hongrie from "";
 import BG3 from "@/img/bg-3.webp";
 import { useState, useContext, useEffect } from "react";
 import Down from "@/img/down.png";
-import Style from "./style.scss";
 import DriversGrind from "@/components/DriversGrind";
 
 const kanit = Kanit({ subsets: ["latin"], weight: "600" });
@@ -27,8 +20,8 @@ export default function Home() {
   const [switchVideo, setSwitchVideo] = useState(false);
   const [windowHeight, setWindowHeight] = useState();
   const [theWidth, settheWidth] = useState(100);
-  const [imageBgPath, setImageBgPath] = useState("/img/bg-test2.png");
-  //const [pageLoaded, setPageLoaded] = useState(false);
+  const [imageBgPath, setImageBgPath] = useState("/img/test2.png");
+  const [imageBgPath2, setImageBgPath2] = useState("/img/track.webp");
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -44,21 +37,15 @@ export default function Home() {
 
   return (
     <div
-      style={{ opacity: isVisible ? 1 : 0, transition: "opacity 0.7s ease-in" }}
+      style={{ 
+        opacity: isVisible ? 1 : 0,
+        transition: "opacity 0.7s ease-in",
+        }}
+      
     >
-      <div className="flex min-h-screen fixed">
-        <div className="w-screen h-screen  opacity-40 flex">
-          <div className="w-1/3">
-            <img className="w-full  h-full object-cover" src={BG1.src}></img>
-          </div>
-          <div className="w-1/3">
-            <img className="w-full  h-full object-cover" src={BG2.src}></img>
-          </div>
-          <div className="w-1/3">
-            <img className="w-full  h-full object-cover" src={BG3.src}></img>
-          </div>
+        <div className="w-screen h-screen opacity-60">
+            <img src={BackGround.src}></img>
         </div>
-
         <div
           className={`text-white absolute bottom-40 left-14 flex flex-col ${
             switchVideo && "opacity-0"
@@ -66,10 +53,10 @@ export default function Home() {
         >
           <text className="text-[15px] ml-[3px] mb-4">LES INFORMATIONS</text>
           <div className="text-[60px]">
-            <span className={syne.className}>DRIVERS .</span>
+            <span className={syne.className}>TRACKS .</span>
           </div>
           <div className="text-[23px] ml-[3px] -mt-2">
-            <text className={kanit2.className}>Découverte de la formule 1</text>
+            <text className={kanit2.className}>tous les circuits de l'année 2024</text>
           </div>
           <div
             onClick={() => {
@@ -80,15 +67,14 @@ export default function Home() {
             <img src={Down.src} className="filter brightness-0 invert"></img>
           </div>
         </div>
-      </div>
 
       <div
         style={{
           top: switchVideo ? `0` : `${windowHeight}px`,
           transition: "top 1.2s ease",
-          background: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${imageBgPath}) no-repeat center /${theWidth}px  auto fixed black`,
+          background: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${imageBgPath}) no-repeat left bottom /800px  auto fixed black`,
         }}
-        className="flex flex-col min-h-screen text-white absolute z-50 transition-all duration-150"
+        className="flex flex-col min-h-screen text-white absolute z-50 transition-all duration-150 bg-black"
       >
         <div className="flex w-full justify-center absolute z-50 top-0 pt-5">
           <div
@@ -100,7 +86,23 @@ export default function Home() {
             <img src={Down.src} className="filter brightness-0 invert"></img>
           </div>
         </div>
-        <DriversGrind />
+        <div className="w-screen h-full">
+            <text>test</text>
+        </div>
+        {/* <div
+          onMouseEnter={() => setImageBgPath("/img/versta.png")}
+          className="w-1/5 p-2 cursor-pointer flex flex-col items-center text-gray-300 "
+        >
+          <div className="">
+            <img src={Versta.src} alt="Versta" className=""></img>
+          </div>
+          <div className="text-gray-300 text-[22px] tracking-[0.1em]">
+            <text className={kanit.className}>MAX VERSTAPPEN</text>
+          </div>
+          <div className={kanit.className}>
+            <text className="text-gray-600 text-[17px]">Redbull racing</text>
+          </div>
+        </div> */}
       </div>
     </div>
   );

@@ -2,6 +2,7 @@
 import { useState, useEffect, useContext } from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "./font.css";
 import Header from "@/components/Header";
 import { usePathname } from "next/navigation";
 import OnLoad from "@/components/OnLoad";
@@ -14,7 +15,6 @@ export default function RootLayout({ children }) {
 
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
   const [isLoadingComplete2, setIsLoadingComplete2] = useState(false);
-  //const [isVisible, setIsVisible] = useState(true);
 
   const loadIt = () => {
     setIsLoadingComplete(false);
@@ -31,32 +31,28 @@ export default function RootLayout({ children }) {
   };
 
   useEffect(() => {
-    // Définir un timer pour supprimer le composant OnLoad après 4 secondes
     const timer = setTimeout(() => {
       setIsLoadingComplete2(true);
     }, 100);
-
-    // Nettoyer le timer au démontage
-    return () => clearTimeout(timer);
+    //return () => clearTimeout(timer);
   }, []);
 
-  // Ceci garantit que le timer s'exécute correctement même après un rechargement du module lors du développement
-  if (process.env.NODE_ENV === "development") {
-    console.log("ghggggggggggggg");
-    useEffect(() => {
-      if (!isLoadingComplete2) {
-        const timer = setTimeout(() => {
-          setIsLoadingComplete(true);
-        }, 1500);
+  // if (process.env.NODE_ENV === "development") {
+  //   console.log("ghggggggggggggg");
+  //   useEffect(() => {
+  //     if (!isLoadingComplete2) {
+  //       const timer = setTimeout(() => {
+  //         setIsLoadingComplete(true);
+  //       }, 1500);
 
-        return () => clearTimeout(timer);
-      }
-    }, [isLoadingComplete2]);
-  }
+  //       return () => clearTimeout(timer);
+  //     }
+  //   }, [isLoadingComplete2]);
+  // }
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className="overflow-y-hidden">
         {isLoadingComplete2 == false ? (
           <OnLoad2></OnLoad2>
         ) : (

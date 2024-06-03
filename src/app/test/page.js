@@ -1,10 +1,10 @@
 import React from "react";
-import OnLoad2 from "@/components/OnLoadTest";
+import DriversGrind from "@/components/DriversGrind";
 
 const Page = () => {
   return (
     <div>
-      <OnLoad2></OnLoad2>
+      <DriversGrind></DriversGrind>
     </div>
   );
 };

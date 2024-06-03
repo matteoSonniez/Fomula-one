@@ -5,6 +5,10 @@ import BackGround from "@/img/driver-bg.jpg";
 import BackGround2 from "@/img/races2.webp";
 import BackGround3 from "@/img/races3.jpg";
 import BackGround4 from "@/img/races4.webp";
+import BackGround5 from "@/img/races5.webp";
+import BackGround6 from "@/img/races6.webp";
+import BackGround7 from "@/img/races7.jpg";
+import BackGround8 from "@/img/races8.jpg";
 import { Kanit } from "next/font/google";
 import Down from "@/img/down.png";
 import RacesInfo from '@/components/Races/RacesInfo';
@@ -30,23 +34,23 @@ const Index = ({ order, title }) => {
     if (isActive) {
       setOneDivHeight(oneDivHeightReference);
       setIsActive(false);
-      if (order == 1) {
+      if (order == 1 || order == 5) {
         setOneDivTop(0);
         setOneDivIndex(40);
       }
-      if (order == 2) {
+      if (order == 2 || order == 6) {
         setOneDivTop(oneDivHeightReference);
         setTimeout(() => {
           setOneDivIndex(30);
         }, 400);
       }
-      if (order == 3) {
+      if (order == 3 || order == 7) {
         setOneDivTop(oneDivHeightReference * 2);
         setTimeout(() => {
           setOneDivIndex(20);
         }, 400);
       }
-      if (order == 4 ) {
+      if (order == 4 || order == 8 ) {
         setOneDivTop(oneDivHeightReference * 3);
         setTimeout(() => {
           setOneDivIndex(10);
@@ -59,21 +63,21 @@ const Index = ({ order, title }) => {
   useEffect(() => {
     if (oneDivHeight != 0) {
       console.log("testttttttt");
-      if (order == 1 && isLoad == false) {
+      if ((order == 1 && isLoad == false) || (order == 5 && isLoad == false)) {
         setOneDivTop(0);
         setOneDivIndex(40);
       }
-      if (order == 2 && isLoad == false) {
+      if ((order == 2 && isLoad == false) || (order == 6 && isLoad == false))  {
         console.log("topppp2");
         setOneDivTop(oneDivHeight);
         setOneDivIndex(30);
       }
-      if (order == 3 && isLoad == false) {
+      if ((order == 3 && isLoad == false) || (order == 7 && isLoad == false))  {
         console.log("topppp3");
         setOneDivTop(oneDivHeight * 2);
         setOneDivIndex(20);
       }
-      if (order == 4 && isLoad == false) {
+      if ((order == 4 && isLoad == false) || (order == 8 && isLoad == false))  {
         console.log("topppp4");
         setOneDivTop(oneDivHeight * 3);
         setOneDivIndex(10);
@@ -96,9 +100,8 @@ const Index = ({ order, title }) => {
         "--one-div-zindex": `${oneDivIndex}`,
         "--isFull": { isActive },
       }}
-      className={`div-height ${
-        isActive && "active"
-      } w-full bg-black shadow-2xl absolute overflow-hidden flex justify-center items-center group cursor-pointer`}
+      className={`div-height ${isActive && "active"} ${(order == 4 || order == 8) && "active"}
+       w-full bg-black shadow-2xl absolute overflow-hidden flex justify-center items-center group cursor-pointer`}
     >
       <div className="left-10 absolute z-50">
         <div className=" text-white text-[30px] uppercase  opacity-30 group-hover:opacity-100 transition-opacity duration-300 tracking-[0.3em]">
@@ -117,10 +120,38 @@ const Index = ({ order, title }) => {
         </div>
       </div>
       <RacesInfo isActive={isActive}></RacesInfo>
-      {order == 1 && <img className="w-full" src={BackGround.src}></img>}
-      {order == 2 && <img className="w-full" src={BackGround2.src}></img>}
-      {order == 3 && <img className="w-full" src={BackGround4.src}></img>}
-      {order == 4 && <img className="w-full" src={BackGround3.src}></img>}
+      {order == 1 && <img onClick={() => {
+        onOpen();
+      }} className="w-full " src={BackGround.src}></img>
+      }
+      {order == 2 && <img onClick={() => {
+        onOpen();
+      }} className="w-full" src={BackGround2.src}></img>
+      }
+      {order == 3 && <img onClick={() => {
+        onOpen();
+      }} className="w-full" src={BackGround4.src}></img>
+      }
+      {order == 4 && <img onClick={() => {
+        onOpen();
+      }} className="w-full" src={BackGround3.src}></img>
+      }
+      {order == 5 && <img onClick={() => {
+        onOpen();
+      }} className="w-full " src={BackGround5.src}></img>
+      }
+      {order == 6 && <img onClick={() => {
+        onOpen();
+      }} className="w-full" src={BackGround6.src}></img>
+      }
+      {order == 7 && <img onClick={() => {
+        onOpen();
+      }} className="w-full" src={BackGround7.src}></img>
+      }
+      {order == 8 && <img onClick={() => {
+        onOpen();
+      }} className="w-full" src={BackGround8.src}></img>
+      }
     </div>
   );
 };
