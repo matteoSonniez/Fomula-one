@@ -63,7 +63,7 @@ const Index = ({ position, image, name, setOneOpen, ordre }) => {
         setIsClick(false);
         setTimeout(() => {
           setApplyHighZIndex(false);
-        }, 700);
+        }, 600);
       }, 400);
     }
     setIsDown(!isDown);
@@ -100,7 +100,7 @@ const Index = ({ position, image, name, setOneOpen, ordre }) => {
         setIsClick(false);
         setTimeout(() => {
           setApplyHighZIndex(false);
-        }, 700);
+        }, 600);
       }
     };
 

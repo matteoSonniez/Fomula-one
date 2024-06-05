@@ -9,7 +9,7 @@ const syne2 = Syne({ subsets: ["latin"], weight: "500" });
 
 const Index = ({loadIt, loadIt2}) => {
   return (
-    <div className="flex justify-between text-white w-full py-6 px-16 fixed z-20">
+    <div className="flex justify-between text-white w-full py-6 px-16 fixed z-50">
       <div className="w-[400px] text-[14px]">
         <div className=" w-20 flex items-center space-x-2 group  cursor-pointer">
           <div className="w-6 flex flex-col">
