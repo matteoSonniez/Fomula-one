@@ -132,7 +132,7 @@ const Index = ({ position, image, name, setOneOpen, ordre }) => {
           isDown ? "opacity-0" : "group-hover:opacity-85"
         } absolute z-50 opacity-0 -translate-x-1/2 ml-5 text-gray-500 flex text-[45px] pl-6 pb-2 group-hover:text-white transition-all duration-500`}
       >
-        <text className={kanit.className}>{name}</text>
+        <text style={{fontFamily: "formule1, sans-serif",}} className={` opacity-65`}>{name}</text>
       </div>
       <img
         className="w-full h-full object-cover transition-all duration-500"

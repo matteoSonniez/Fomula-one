@@ -16,19 +16,25 @@ const Index = ({ loadIt, loadIt2, closeSide, isRace }) => {
           className={`w-20 flex items-center space-x-2 group cursor-pointer ${isRace && "absolute right-0 mr-10"}`}
         >
           <div className="w-6 flex flex-col">
-            <div className={`bg-white h-[1px] w-full`}></div>
+            <div className={`bg-white h-[2px] w-full`}></div>
             <div
               className={`bg-white h-[10px] opacity-0 w-full transition-all duration-100 group-hover:h-[16px] `}
             ></div>
-            <div className={`bg-white h-[1px] w-full`}></div>
+            <div className={`bg-white h-[2px] w-full`}></div>
           </div>
           <div className={syne2.className}>MENU</div>
         </div>
       </div>
 
       {!isRace && (
-        <div className="w-[400px] flex justify-center">
-          <text className={syne.className}>FORMULA ONE</text>
+        <div className="w-[400px] text-[18px] tracking-[0.1em] flex justify-center">
+          <Link
+              style={{fontFamily: "formule1, sans-serif",}} 
+              onClick={() => {
+                loadIt2();
+              }}
+              href={"/"}>FORMULA ONE
+          </Link>
         </div>
       )}
       {!isRace && (

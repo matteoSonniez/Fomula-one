@@ -11,7 +11,7 @@ import Down from "@/img/down.png";
 const kanit = Kanit({ subsets: ["latin"], weight: "600" });
 const kanit2 = Gothic_A1({ subsets: ["latin"], weight: "300" });
 const syne = Syne({ subsets: ["latin"], weight: "800" });
-const syne2 = Syne({ subsets: ["latin"], weight: "700" });
+const syne2 = Syne({ subsets: ["latin"], weight: "600" });
 
 export default function Home() {
   const [switchVideo, setSwitchVideo] = useState(false);
@@ -58,7 +58,7 @@ export default function Home() {
       <div
         style={{
           top: switchVideo ? `-${windowHeight}px` : "0",
-          transition: "top 1.8s ease",
+          transition: "top 1.2s ease",
         }}
         className="flex min-h-screen absolute"
       >
@@ -73,12 +73,15 @@ export default function Home() {
             switchVideo && "opacity-0"
           } transition-opacity duration-700`}
         >
+          {/* mix-blend-exclusion */}
           <text className="text-[15px] ml-[3px] mb-4">LES INFORMATIONS</text>
-          <div className="text-[50px] mix-blend-exclusion">
-            <span className={syne.className}>L'UNIVERS FORMULA .</span>
+          <div
+          style={{fontFamily: "formule1, sans-serif",}}
+          className="text-[65px]  text-slate-100">
+            <span >L'UNIVERS FORMULA .</span>
           </div>
           <div className="text-[23px] ml-[3px] -mt-2">
-            <text className={kanit2.className}>Découverte de la formule 1</text>
+            <text className={syne2.className}>Découverte de la formule 1</text>
           </div>
           <div
             onClick={() => {
@@ -94,7 +97,7 @@ export default function Home() {
       <div
         style={{
           top: switchVideo ? `0` : `${windowHeight}px`,
-          transition: "top 1.8s ease",
+          transition: "top 1.2s ease",
         }}
         className="flex min-h-screen absolute"
       >
@@ -110,8 +113,10 @@ export default function Home() {
           } transition-opacity duration-700`}
         >
           <text className="text-[15px] ml-[3px] mb-4">LES INFORMATIONS</text>
-          <div className="text-[50px] mix-blend-difference">
-            <span className={syne.className}>LIVE TRACKING .</span>
+          <div
+          style={{fontFamily: "formule1, sans-serif",}}
+          className="text-[65px]  text-slate-100">
+            <span >LIVE TRACKING .</span>
           </div>
           <div className="text-[23px] ml-[3px] -mt-2">
             <text className={kanit2.className}>Suivez tout au complet</text>
